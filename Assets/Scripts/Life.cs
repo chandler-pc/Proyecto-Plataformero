@@ -6,40 +6,24 @@ using TMPro;
 
 public class Life : MonoBehaviour
 {
-    public Movement_Tank tank;
-    public Movement_Archer archer;
-    public pj_Active pj;
     public TextMeshProUGUI txt;
     private Image life_bar;
+    public Movement_Tank player1;
     private void Start()
     {
-        life_bar = GetComponent<Image>();
+        life_bar = GameObject.Find("life").GetComponent<Image>();
+        player1 = GameObject.Find("Tank").GetComponent<Movement_Tank>();
     }
     void Update()
     {
-        if (pj.pj_act == "tank")
+        if (player1.gameObject.activeInHierarchy)
         {
-            life_bar.fillAmount = tank.life / tank.maxLife;
-            if (tank.life <= 0)
+            life_bar.fillAmount = player1.life / player1.maxLife;
+            if(player1.life < 0)
             {
-                txt.text = 0.ToString();
+                player1.life = 0;
             }
-            else
-            {
-                txt.text = tank.life.ToString();
-            }
-        }
-        else if (pj.pj_act == "archer")
-        {
-            life_bar.fillAmount = archer.life / archer.maxLife;
-            if (archer.life <= 0)
-            {
-                txt.text = 0.ToString();
-            }
-            else
-            {
-                txt.text = archer.life.ToString();
-            }
+            txt.text = player1.life.ToString();
         }
     }
 }

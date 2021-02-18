@@ -8,6 +8,9 @@ TagManager:
   - Ground
   - Coin
   - Obstacle
+  - Potion
+  - Jump
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -17,11 +20,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemies
+  - World
+  - Objects
+  - Weapon
   - 
   - 
   - 
@@ -44,4 +47,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: BG
+    uniqueID: 2020765805
     locked: 0

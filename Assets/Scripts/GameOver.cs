@@ -1,20 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
-{ 
-    public Movement_Archer arch;
-    public Movement_Tank tankl;
-    public GameObject G_O;
-    public GameObject Game;
+{
+    public GameObject GO = null;
+    public GameObject ui = null;
+    public PlayerController player=null;
+    public Button restart = null;
+    public Button exit = null;
+    public GameObject single = null;
+    private int a = 0;
+    void Start()
+    {
+        a = SceneManager.GetActiveScene().buildIndex;
+        restart.onClick.AddListener(() =>
+        {
+            Destroy(single.gameObject);
+            SceneManager.LoadScene(a);
+        });
+        exit.onClick.AddListener(() =>
+        {
+            Application.Quit();
+        });
+    }
 
+    // Update is called once per frame
     void Update()
     {
-        if(arch.life<=0 && tankl.life <= 0)
+        if (player.life <= 0)
         {
-            G_O.SetActive(true);
-            Game.SetActive(false);
+            GO.SetActive(true);
+            ui.SetActive(false);
         }
     }
 }

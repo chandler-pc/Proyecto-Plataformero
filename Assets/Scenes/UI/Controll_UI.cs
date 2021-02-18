@@ -9,10 +9,10 @@ public class Controll_UI : MonoBehaviour
 {
     [Header("Menu")]
     public GameObject mm;
+    public GameObject play;
     public Button playbtn;
     public Button optbtn;
     public Button xmbtn;
-    public Button loadbtn;
     [Header("Options")]
     public GameObject opt;
     public Button xbtn;
@@ -23,13 +23,13 @@ public class Controll_UI : MonoBehaviour
         opt.SetActive(false);
         playbtn.onClick.AddListener(() =>
         {
-            SceneManager.LoadScene("SampleScene");
+            play.SetActive(true);
+            SceneManager.LoadScene(1);
         });
         optbtn.onClick.AddListener(() =>
         {
             opt.SetActive(true);
             playbtn.gameObject.SetActive(false);
-            loadbtn.gameObject.SetActive(false);
             optbtn.interactable=false;
             xmbtn.interactable = false;
         }); 
@@ -41,7 +41,6 @@ public class Controll_UI : MonoBehaviour
         {
             opt.SetActive(false);
             playbtn.gameObject.SetActive(true);
-            loadbtn.gameObject.SetActive(true);
             optbtn.interactable = true;
             xmbtn.interactable = true;
         });
