@@ -21,5 +21,5 @@ La mecánica principal del videojuego es caminar y saltar a través de las plata
  - Al recolectar 10 monedas obtendremos una poción.
 
 ### GAME DESIGN DOCUMENT 📌
-Para más información se puede revisar el GDC. 
+Para más información se puede revisar el GDD. 
 https://drive.google.com/file/d/1k3PslIobqELxofK176MNquNLwjC3lifU/view?usp=sharing
